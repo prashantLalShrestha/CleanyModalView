@@ -1,13 +1,13 @@
 Pod::Spec.new do |spec|
   spec.name = "CleanyModalView"
-  spec.version = "1.0.0"
+  spec.version = "2.0.0"
   spec.summary = "CleanyModalView is just a simple CoreFoundationKit utility Module"
 
   spec.description = <<-DESC
   This module contains the tab bar controller with a circular button at center
                    DESC
 
-  spec.homepage = "https://github.com/prashantLalShrestha/CircleTabBarController"
+  spec.homepage = "https://github.com/prashantLalShrestha/CleanyModalView"
   # spec.screenshots = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '11.0'
   # spec.source = { :git => '' }
   spec.source = { 
-    :git => "https://github.com/prashantLalShrestha/CircleTabBarController.git", :tag => spec.version.to_s
+    :git => "https://github.com/prashantLalShrestha/CleanyModalView.git", :tag => spec.version.to_s
   }
   
   spec.source_files = 'Sources/**/*'
