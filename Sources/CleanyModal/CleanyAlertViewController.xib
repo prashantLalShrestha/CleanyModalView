@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,6 +18,7 @@
                 <outlet property="alertViewBottom" destination="Dxq-op-6RY" id="0oK-hs-Kqh"/>
                 <outlet property="alertViewCenterY" destination="VND-rw-ejz" id="lOP-7A-5f6"/>
                 <outlet property="alertWidthConstraint" destination="7gx-bX-k7E" id="has-Wn-K0o"/>
+                <outlet property="backgroundView" destination="mRe-C3-hWU" id="8pU-zU-rTe"/>
                 <outlet property="bottomMarginFromActionsTV" destination="lnQ-Re-Y6m" id="h7s-7C-EAu"/>
                 <outlet property="contentStackView" destination="nY1-Xb-K2D" id="CVC-cq-Bei"/>
                 <outlet property="iconIV" destination="cpW-hH-gQZ" id="xbT-Ey-UvR"/>
@@ -32,6 +33,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRe-C3-hWU">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhv-B8-xFU">
                     <rect key="frame" x="51.666666666666657" y="196.99999999999997" width="310.66666666666674" height="342.33333333333326"/>
                     <subviews>
@@ -111,10 +116,14 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.40496575342465752" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="mRe-C3-hWU" secondAttribute="bottom" id="3dW-sH-Jlu"/>
                 <constraint firstItem="mhv-B8-xFU" firstAttribute="width" secondItem="qGX-3Z-mAo" secondAttribute="width" multiplier="0.75" id="7gx-bX-k7E"/>
                 <constraint firstItem="hgY-cF-qzn" firstAttribute="bottom" secondItem="mhv-B8-xFU" secondAttribute="bottom" priority="250" constant="20" id="Dxq-op-6RY"/>
+                <constraint firstItem="mRe-C3-hWU" firstAttribute="top" secondItem="qGX-3Z-mAo" secondAttribute="top" id="LAa-BM-Aoh"/>
                 <constraint firstItem="mhv-B8-xFU" firstAttribute="centerX" secondItem="qGX-3Z-mAo" secondAttribute="centerX" id="NNQ-pe-pNs"/>
                 <constraint firstItem="mhv-B8-xFU" firstAttribute="centerY" secondItem="qGX-3Z-mAo" secondAttribute="centerY" id="VND-rw-ejz"/>
+                <constraint firstAttribute="trailing" secondItem="mRe-C3-hWU" secondAttribute="trailing" id="ZEv-yb-I4j"/>
+                <constraint firstItem="mRe-C3-hWU" firstAttribute="leading" secondItem="qGX-3Z-mAo" secondAttribute="leading" id="fIf-Ag-YmJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="hgY-cF-qzn"/>
             <point key="canvasLocation" x="34.782608695652179" y="52.989130434782609"/>

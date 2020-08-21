@@ -27,6 +27,7 @@ open class CleanyAlertViewController: CleanyModalViewController {
         }
     }
     
+    @IBOutlet weak private var backgroundView: UIView!
     @IBOutlet weak private var mainContentView: UIView!
     
     @IBOutlet weak private var actionsTV: UITableView!
@@ -65,6 +66,14 @@ open class CleanyAlertViewController: CleanyModalViewController {
     public let styleSettings: CleanyAlertConfig.StyleSettings
     
     let dataSource: AlertModel
+    
+    public var dismissOnTapOutside: Bool = false {
+        didSet {
+            if viewIfLoaded != nil {
+                dismissOnTapConfiguration()
+            }
+        }
+    }
     
     public init(title: String? = nil, message: String? = nil, imageName: String? = nil, preferredStyle: CleanyAlertViewController.Style = .alert, styleSettings: CleanyAlertConfig.StyleSettings? = nil) {
         
@@ -179,11 +188,8 @@ open class CleanyAlertViewController: CleanyModalViewController {
             }
         })
         
-        let tap  = UITapGestureRecognizer(target: self, action: #selector(dummyAction))
-        mainContentView.addGestureRecognizer(tap)
+        dismissOnTapConfiguration()
     }
-    
-    @objc func dummyAction() { }
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -362,6 +368,18 @@ open class CleanyAlertViewController: CleanyModalViewController {
         }
     }
     
+    // MARK: - Dismiss On Tap
+    private func dismissOnTapConfiguration() {
+        backgroundView.gestureRecognizers?.forEach({ backgroundView.removeGestureRecognizer($0) })
+        if dismissOnTapOutside {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissOnTap))
+            backgroundView.addGestureRecognizer(tap)
+        }
+    }
+    
+    @objc private func dismissOnTap() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - UITableView Delegates
